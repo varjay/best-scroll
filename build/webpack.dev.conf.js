@@ -8,7 +8,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const merge = require('webpack-merge')
 const webpackBaseConfig = require('./webpack.base.conf.js')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 const root = path.join(__dirname, '../')
 
 module.exports = merge(webpackBaseConfig, {
@@ -68,7 +67,6 @@ module.exports = merge(webpackBaseConfig, {
     ]
   },
   plugins: [
-    new BundleAnalyzerPlugin(),
     new webpack.HotModuleReplacementPlugin(), // 热加载模块
     // 给index.html自动添加引用的JS文件，CSS文件
     new HtmlWebpackPlugin({

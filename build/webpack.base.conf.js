@@ -60,7 +60,6 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(), // webpack 4 vue-loader需要这样使用
-    // new FriendlyErrorsWebpackPlugin()  // webpack默认编译时会输出很多信息，使用该插件可以美化终端输出。
   ],
   // 该选项是用来polyfill Node中的某些全局变量或者模块，让最初为Node.js环境写的代码可以在其他环境运行
   node: {
