@@ -27,11 +27,11 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
       },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: resolve('node_modules')
-      },
+      // {
+      //   test: /\.js$/,
+      //   loader: 'babel-loader',
+      //   exclude: resolve('node_modules')
+      // },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',

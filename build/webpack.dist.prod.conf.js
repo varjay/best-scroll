@@ -43,7 +43,7 @@ const webpackConfig = merge(baseWebpackConfig, {
     filename: PKG.shortname + '.min.js',
     library: {
       root: PKG.root,
-      commonjs: PKG.shortname + '-public-components',
+      // commonjs: PKG.shortname + '-public-components',
     },
     libraryTarget: 'umd'
   },
