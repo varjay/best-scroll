@@ -316,8 +316,9 @@
         this.scroller.scrollTo(x, y, animate)
       },
       scrollElement(el, time, offsetX, offsetY, easing) {
-        window.el = el
-        console.log(el)
+        let y = el.offsetTop
+        let x = el.offsetLeft
+        this.scrollTo(x, y, 100)
       },
 
       scrollBy(x, y, animate) {
