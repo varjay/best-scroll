@@ -248,7 +248,7 @@
             return
           }
           beforeTop = top
-          this.onScroll(top)
+          this.onScroll({x: left,y: top})
         }, 10)
       }
 

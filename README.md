@@ -1,16 +1,13 @@
-# Vue Scroller ![version](https://img.shields.io/badge/version-%20v2.2.0%20-green.svg) ![vue](https://img.shields.io/badge/vue-%20v2.1%20-green.svg) 
-
-[Vue Scroller](https://github.com/wangdahoo/bestscroll) is a foundational component of [Vonic](https://github.com/wangdahoo/vonic) UI.
-In purpose of smooth scrolling, pull to refresh and infinite loading.
+# Best Scroll ![version](https://img.shields.io/badge/version-%20v2.2.0%20-green.svg) ![vue](https://img.shields.io/badge/vue-%20v2.1%20-green.svg) 
 
 ## How to use
 
-Download file[bestscroll](https://github.com/varjay/bestscroll/releases/) , introduced in the code.
+Download file[bestscroll](https://github.com/varjay/bestscroll/) , introduced in the code.
 
 ```js
 import Vue from 'vue'
-import bestscroll from '@/js/bestscroll.min'
-Vue.use(BestScroll.default)
+import scroll from 'best-scroll'
+Vue.use(scroll)
 ```
 
 ```html
@@ -50,3 +47,4 @@ Vue.use(BestScroll.default)
 - `scrollTo(x:Integer, y:Integer, animate:Boolean)` scroll to a position in scroller content
 - `scrollBy(x:Integer, y:Integer, animate:Boolean)` scroll by a position in scroller content
 - `getPosition :Object` get current position of scroller content
+- `scrollElement(el, time, offsetX, offsetY, easing)` 
