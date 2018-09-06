@@ -2,14 +2,18 @@
 
 ## How to use
 
-Download file[bestscroll](https://github.com/varjay/bestscroll/) , introduced in the code.
-
+####NPM
+```js
+npm i best-scroll
+```
+####js
 ```js
 import Vue from 'vue'
 import scroll from 'best-scroll'
 Vue.use(scroll)
 ```
 
+####vue
 ```html
 <scroller 
   :on-refresh="refresh"
