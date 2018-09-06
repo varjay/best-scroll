@@ -2,18 +2,18 @@
 
 ## How to use
 
-####NPM
+#### NPM
 ```js
 npm i best-scroll
 ```
-####js
+#### js
 ```js
 import Vue from 'vue'
 import scroll from 'best-scroll'
 Vue.use(scroll)
 ```
 
-####vue
+#### vue
 ```html
 <scroller 
   :on-refresh="refresh"
