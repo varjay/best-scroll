@@ -4,7 +4,7 @@
 
 #### NPM
 ```js
-npm i best-scroll
+npm i best-scroll -S
 ```
 #### js
 ```js
