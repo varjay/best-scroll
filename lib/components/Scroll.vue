@@ -175,7 +175,8 @@
         pullToRefreshLayer: undefined,
         mousedown: false,
         infiniteTimer: undefined,
-        resizeTimer: undefined
+        resizeTimer: undefined,
+        disableMove: false,
       }
     },
 
@@ -334,6 +335,9 @@
       },
 
       touchMove(e) {
+        if (this.disableMove) {
+          return
+        }
         e.preventDefault()
         this.scroller.doTouchMove(e.touches, e.timeStamp)
       },
@@ -355,6 +359,9 @@
       },
 
       mouseMove(e) {
+        if (this.disableMove) {
+          return
+        }
         if (!this.mousedown) {
           return
         }
@@ -395,11 +402,18 @@
         } else {
           this.loadingState = 0
         }
-      }
+      },
+      // 停用滚动
+      disable() {
+        this.disableMove = true
+      },
+      enable() {
+        this.disableMove = false
+      },
     }
   }
 </script>
-<style lang="css" scoped>
+<style lang="less" scoped>
   ._v-container {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 

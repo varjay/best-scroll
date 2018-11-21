@@ -52,3 +52,5 @@ Vue.use(scroll)
 - `scrollBy(x:Integer, y:Integer, animate:Boolean)` scroll by a position in scroll content
 - `getPosition :Object` get current position of scroll content
 - `scrollElement(el, time, offsetX, offsetY, easing)` 
+- `disable()` disable scrolling
+- `enable()` enable scrolling
