@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huya-base-fed/public-components.git"
+    "url": "git+https://github.com/varjay/best-scroll"
   },
   "license": "MIT",
   "peerDependencies": {},
