@@ -31,6 +31,7 @@ Vue.use(scroll)
 | onRefresh | pull to refresh callback | N | - |
 | onInfinite | infinite loading callback | N | - |
 | onScroll | Y-axis position callback | N | - |
+| scrollingComplete | scroll end callback | N | 滚动完毕回调 |
 | refreshText | tips of `pull-to-refresh` | N | 下拉刷新 |
 | noDataText | tips of `no-more-data` when `infinite-loading` finished | N | 没有更多数据 |
 | width | scroll container width | N | `100%` |

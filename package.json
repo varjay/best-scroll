@@ -2,7 +2,7 @@
   "name": "best-scroll",
   "shortname": "bestscroll",
   "root": "BestScroll",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "史上最好的滚动插件 on Vue.js",
   "main": "dist/best-scroll.min.js",
   "module": "lib/index.js",

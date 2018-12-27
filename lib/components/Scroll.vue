@@ -68,6 +68,7 @@
       onRefresh: Function,
       onInfinite: Function,
       onScroll: Function,
+      scrollingComplete: Function,
 
       refreshText: {
         type: String,
@@ -200,7 +201,8 @@
         snapping: this.snapping,
         animating: this.animating,
         animationDuration: this.animationDuration,
-        bouncing: this.bouncing
+        bouncing: this.bouncing,
+        scrollingComplete: this._scrollingComplete,
       })
 
       // enable PullToRefresh
@@ -316,10 +318,10 @@
       scrollTo(x, y, animate) {
         this.scroller.scrollTo(x, y, animate)
       },
-      scrollElement(el, time, offsetX, offsetY, easing) {
+      scrollElement(el, time=100, offsetX, offsetY, easing) {
         let y = el.offsetTop
         let x = el.offsetLeft
-        this.scrollTo(x, y, 100)
+        this.scrollTo(x, y, time)
       },
 
       scrollBy(x, y, animate) {
@@ -409,6 +411,11 @@
       },
       enable() {
         this.disableMove = false
+      },
+      _scrollingComplete() {
+        if (this.scrollingComplete) {
+          this.scrollingComplete()
+        }
       },
     }
   }
