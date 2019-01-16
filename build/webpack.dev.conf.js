@@ -17,6 +17,7 @@ module.exports = merge(webpackBaseConfig, {
   devServer: {
     host: '0.0.0.0',
     historyApiFallback: true, // 404的页面会自动跳转到/页面
+    disableHostCheck: true,
     inline: true, // 文件改变自动刷新页面
     progress: true, // 显示编译进度
     quiet: true,
