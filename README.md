@@ -1,4 +1,4 @@
-# Best Scroll ![version](https://img.shields.io/badge/version-%20v2.2.0%20-green.svg) ![vue](https://img.shields.io/badge/vue-%20v2.1%20-green.svg) 
+# Best Scroll ![version](https://img.shields.io/badge/version-%20v1.0.1%20-green.svg) ![vue](https://img.shields.io/badge/vue-%20v2.5.17%20-green.svg) 
 
 ## How to use
 
@@ -32,16 +32,8 @@ Vue.use(scroll)
 | onInfinite | infinite loading callback | N | - |
 | onScroll | Y-axis position callback | N | - |
 | scrollingComplete | scroll end callback | N | 滚动完毕回调 |
-| refreshText | tips of `pull-to-refresh` | N | 下拉刷新 |
-| noDataText | tips of `no-more-data` when `infinite-loading` finished | N | 没有更多数据 |
 | width | scroll container width | N | `100%` |
 | height | scroll container height | N | `100%` |
-| snapping | enable snapping mode | N | `false` |
-| snappingWidth | snapping width | N | 100 (stand for 100px) |
-| snappingHeight | snapping height | N | 100 |
-| refreshLayerColor | text color of `pull-to-refresh` layer | N | #AAA |
-| loadingLayerColor | text color of `infinite-loading` layer | N | #AAA |
-| minContentHeight | min content height (px) of `scroll-content` | N | 0 |
 
 #### Scroll vm instance methods:
 

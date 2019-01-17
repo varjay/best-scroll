@@ -3,7 +3,7 @@
     <span @click="scrollToElement(1)">移动到位置1</span>
     <span @click="scrollToElement(2)">移动到位置2</span>
     <div style="height: 50vh;width: 200px;overflow: hidden;position: relative;background: #aaa;">
-      <scroll ref="scroll" :scrollingComplete="scrollingComplete">
+      <scroll ref="scroll" :scrollingComplete="scrollingComplete" :onRefresh="onRefresh">
         滚动测试 <br>
         滚动测试 <br>
         滚动测试 <br>
@@ -63,6 +63,9 @@ export default {
     },
     scrollingComplete() {
       console.log('aaaa')
+    },
+    onRefresh() {
+      console.log('刷新')
     },
   }
 }
