@@ -8,6 +8,7 @@
     @mousedown="mouseDown($event)"
     @mousemove="mouseMove($event)"
     @mouseup="mouseUp($event)"
+    @mousewheel="mousewheel"
   >
     <div class="_v-content" :id="contentId">
       <slot></slot>
@@ -103,6 +104,7 @@ export default {
       infiniteTimer: undefined,
       resizeTimer: undefined,
       disableMove: false,
+      resultTop: 0,
     }
   },
 
@@ -199,7 +201,6 @@ export default {
     }
 
     let { content_width, content_height } = contentSize()
-    
     this.resizeTimer = setInterval(() => {
       let {width, height} = contentSize()
       if (width !== content_width || height !== content_height) {
@@ -217,6 +218,55 @@ export default {
   },
 
   methods: {
+    mousewheel(e) {
+      if (this.resultTop === 0) {
+        this.resultTop = this.scroller.__scrollTop
+      }
+      let speed = 10
+      let wheelDeltaX
+      let wheelDeltaY
+      let scrollheight = this.scroller.__contentHeight - this.scroller.__clientHeight
+      switch (true) {
+        case 'deltaX' in e:
+          if (e.deltaMode === 1) {
+            wheelDeltaX = -e.deltaX * speed
+            wheelDeltaY = -e.deltaY * speed
+          } else {
+            wheelDeltaX = -e.deltaX
+            wheelDeltaY = -e.deltaY
+          }
+          // console.log('deltaX')
+          break
+        case 'wheelDeltaX' in e:
+          wheelDeltaX = e.wheelDeltaX / 120 * speed
+          wheelDeltaY = e.wheelDeltaY / 120 * speed
+          // console.log('wheelDeltaX')
+          break
+        case 'wheelDelta' in e:
+          wheelDeltaX = wheelDeltaY = e.wheelDelta / 120 * speed
+          // console.log('wheelDelta')
+          break
+        case 'detail' in e:
+          wheelDeltaX = wheelDeltaY = -e.detail / 3 * speed
+          // console.log('detail')
+          break
+        default:
+          return
+      }
+      let direction = true ? -1 : 1
+      wheelDeltaX *= direction
+      wheelDeltaY *= direction
+      // console.log(wheelDeltaY)
+      let {left, top, zoom} = this.scroller.getValues()
+      this.resultTop += wheelDeltaY
+      // console.log(this.resultTop)
+      if (this.resultTop < 0) {
+        this.resultTop = 0
+      } else if (this.resultTop > scrollheight) {
+        this.resultTop = scrollheight
+      }
+      this.scroller.scrollTo(0, this.resultTop, 500)
+    },
     resize() {
       let container = this.container;
       let content = this.content;
