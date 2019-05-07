@@ -75,6 +75,10 @@ export default {
     },
 
     cssClass: String, // content css class
+    flipDirection: {
+      type: Boolean,
+      default: false
+    },
   },
 
   computed: {
@@ -130,6 +134,7 @@ export default {
       animationDuration: this.animationDuration,
       bouncing: this.bouncing,
       scrollingComplete: this._scrollingComplete,
+      flipDirection: this.flipDirection
     })
 
     // enable PullToRefresh
@@ -235,7 +240,7 @@ export default {
             wheelDeltaX = -e.deltaX
             wheelDeltaY = -e.deltaY
           }
-          // console.log('deltaX')
+          console.log('deltaX')
           break
         case 'wheelDeltaX' in e:
           wheelDeltaX = e.wheelDeltaX / 120 * speed
@@ -258,7 +263,11 @@ export default {
       wheelDeltaY *= direction
       // console.log(wheelDeltaY)
       let {left, top, zoom} = this.scroller.getValues()
-      this.resultTop += wheelDeltaY
+      if (this.flipDirection) {
+        this.resultTop -= wheelDeltaY
+      } else {
+        this.resultTop += wheelDeltaY
+      }
       // console.log(this.resultTop)
       if (this.resultTop < 0) {
         this.resultTop = 0
@@ -312,6 +321,7 @@ export default {
     },
 
     touchMove(e) {
+      // console.log(e)
       if (this.disableMove) {
         return
       }
@@ -336,6 +346,7 @@ export default {
     },
 
     mouseMove(e) {
+      // console.log(e.y)
       if (this.disableMove) {
         return
       }

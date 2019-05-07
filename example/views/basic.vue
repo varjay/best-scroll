@@ -3,7 +3,7 @@
     <span @click="scrollToElement(1)">移动到位置1</span>
     <span @click="scrollToElement(2)">移动到位置2</span>
     <div style="height: 50vh;width: 200px;overflow: hidden;position: relative;background: #aaa;">
-      <scroll ref="scroll" :onInfinite="pullingUp" :scrollingComplete="scrollingComplete" :onRefresh="onRefresh">
+      <scroll ref="scroll" :onInfinite="pullingUp" :scrollingComplete="scrollingComplete" :onRefresh="onRefresh" :flipDirection="true" :bouncing="false">
         滚动测试 <br>
         滚动测试 <br>
         滚动测试 <br>
